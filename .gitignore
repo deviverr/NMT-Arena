@@ -1,0 +1,14 @@
+node_modules
+.next
+dist
+out
+.turbo
+.pnpm-store
+.vercel
+.env
+.env.local
+.env.*.local
+coverage
+*.tsbuildinfo
+supabase/.branches
+supabase/.temp

@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "NMT Arena",
+  "version": "0.1.0",
+  "description": "XP, бейджі та лідерборд для тестів zno.osvita.ua.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "NMT Arena"
+  },
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://zno.osvita.ua/*", "https://nmt-arena.fun/*", "http://localhost:3000/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://zno.osvita.ua/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://nmt-arena.fun/*", "http://localhost:3000/*"],
+      "js": ["auth-bridge.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "externally_connectable": {
+    "matches": ["https://nmt-arena.fun/*", "http://localhost:3000/*"]
+  }
+}

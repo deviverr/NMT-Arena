@@ -1,0 +1,26 @@
+{
+  "name": "nmt-arena",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "build:extension": "turbo run build --filter=@nmt-arena/extension",
+    "build:web": "turbo run build --filter=@nmt-arena/web",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "db:migrate": "supabase db push",
+    "db:seed": "supabase db seed"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.15",
+    "turbo": "^2.0.14",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}
